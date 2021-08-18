@@ -25,7 +25,8 @@ body {
   border: none;
   border-radius: 5px;
   padding: 15px 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #bir-form {
@@ -120,12 +121,34 @@ body {
   font-family: Dotum, "돋움", Helvetica, sans-serif;
 }
 
+#user_self {
+  font-size: 14px;
+  width: 380px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+}
+
 .submit-btn {
   font-size: 14px;
   background-color: #6d7976;
   color: white;
   width: 100%;
   border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: none;
+}
+
+.reset-btn {
+  font-size: 14px;
+  background-color: #6d7976;
+  color: white;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 5px;
   padding: 10px;
   border: none;
 }

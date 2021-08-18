@@ -11,15 +11,35 @@
     <!-- 회원가입 페이지 구성-->
     <div class="join-form">
         <div class="content">
-            <form>
+            <form name="join_form" action="/JOIN_MEMBER/html/main.html" method="POST">
                 <h3>아이디</h3>
-                <input type="text" name="user_id" class="text-field" placeholder="아이디" maxlength="20">
+                <input type="text" name="user_id" id="user_id" class="text-field" placeholder="아이디" maxlength="20">
                 <h3>비밀번호</h3>
-                <input type="password" name="user_pw" class="text-field" placeholder="비밀번호" maxlength="20">
+                <input type="password" name="user_pw" id="user_pw" class="text-field" placeholder="비밀번호" maxlength="20">
                 <h3>비밀번호 확인</h3>
-                <input type="password" name="userpw-ck" class="text-field" placeholder="비밀번호 확인" maxlength="20">
+                <input type="password" name="userpw_ck" id="userpw_ck" class="text-field" placeholder="비밀번호 확인" maxlength="20">
                 <h3>이름</h3>
-                <input type="text" name="user_name" class="text-field" placeholder="이름" maxlength="20">
+                <input type="text" name="user_name" id="user_name" class="text-field" placeholder="이름" maxlength="20">
+                <h3>성별</h3>
+                <div id="gender">
+                    <input type="radio" name="user_gender" id="male" value="man"><span>남</span>
+                    <input type="radio" name="user_gender" id="female" value="woman"><span>여</span>
+                </div>
+                <h3>이메일</h3>
+                <div class="email-form">
+                    <input type="text" id="email_id" name="email_id" class="form_w200" value="" title="이메일 아이디" placeholder="이메일" maxlength="18" ><span>@</span>
+                    <input type="text" id="email_domain" name="email_domain" class="form_w200" value="" title="도메인" maxlength="18"> 
+                    <select class="sel" id="email_sel" title="이메일 도메인 주소 선택" onchange="change_email();">
+                        <option hidden>-선택-</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="hotmail.com">hotmail.com</option>
+                        <option value="korea.com">korea.com</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="yahoo.com">yahoo.com</option>
+                    </select>
+                </div>
                 <h3>생년월일</h3>
                 <div id="bir-form">
                     <input type="text" name="userbir-yy" id="bir-yy" placeholder="년(4자)" maxlength="4">
@@ -40,31 +60,15 @@
                     </select>
                     <input type="text" name="userbir-dd" id="bir-dd" placeholder="일" maxlength="2">
                 </div>
-                <h3>성별</h3>
-                <div id="gender">
-                    <input type="radio" name="user_gender" id="gender" value="man" checked><span>남</span>
-                    <input type="radio" name="user_gender" id="gender" value="woman"><span>여</span>
-                </div>
-                <h3>이메일</h3>
-                <div class="email-form">
-                    <input type="text" id="email_id" name="email_id" class="form_w200" value="" title="이메일 아이디" placeholder="이메일" maxlength="18" ><span>@</span>
-                    <input type="text" id="email_domain" name="email_domain" class="form_w200" value="" title="도메인" maxlength="18"> 
-                    <select class="sel" title="이메일 도메인 주소 선택" onclick="setEmailDomain(this.value);return false;">
-                        <option hidden>-선택-</option>
-                        <option value="naver.com">naver.com</option>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="hanmail.net">hanmail.net</option>
-                        <option value="hotmail.com">hotmail.com</option>
-                        <option value="korea.com">korea.com</option>
-                        <option value="nate.com">nate.com</option>
-                        <option value="yahoo.com">yahoo.com</option>
-                    </select>
-                </div>
                 <h3>전화번호</h3>
                 <input type="tel" id="user_ph" class="text-field" maxlength="16" placeholder="전화번호">
-                <input type="submit" value="가입완료" class="submit-btn" id="btnjoin">
+                <h3>자기소개</h3>
+                <textarea name='self' id='user_self' cols="40" rows="7"></textarea>
+                <input type="button" class="submit-btn" id="btnjoin" onclick="joinform_check();" value="가입완료">
+                <input type="reset" class="reset-btn" id="btnreset" value="취소">
             </form>
         </div>
     </div>
+    <script src="../js/member_join.js"></script>
 </body>
 </html>
